@@ -1,0 +1,32 @@
+---
+import { ICertificates } from "@types";
+
+const { title, details } = Astro.props as ICertificates;
+---
+
+<section
+  class="flex items-start justify-between flex-col sm:flex-row dark:text-light"
+>
+  <h2 class="w-[15rem] mt-16">{title}</h2>
+  <div class="w-full">
+    {
+      details.map((item) => (
+        <div class="my-16">
+          <div class="flex justify-between items-center flex-wrap">
+            <h3 class="text-xl font-semibold">{item.certName}</h3>
+            <p class="text-sm dark:text-gray">
+              {item.issuedDate} - {item.validUntilDate}
+            </p>
+          </div>
+          <p class="text-sm mt-3 text-purple-500">{item.issuedBy}</p>
+          <ul class="mt-3">
+            {item.description.map((item) => (
+              <li class="dark:text-gray">{item}</li>
+            ))}
+          </ul>
+          <p class="mt-3 dark:text-gray"><b><a href={item.verificationLink}>Verification Link </a></b></p>
+        </div>
+      ))
+    }
+  </div>
+</section>

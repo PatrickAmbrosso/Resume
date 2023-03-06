@@ -11,27 +11,45 @@ export interface IHeroProps {
 
 export interface IExperience {
   name: string;
+  designation: string;
   location: string;
   startDate: string;
   endDate: string;
   description: string[];
+  skillsInUse: string;
 }
 export interface IExperiences {
   title: string;
   details: IExperience[];
 }
 
-export interface IProject {
-  title: string;
-  isFeatured: boolean;
-  thumbnail: string;
-  githubUrl: string;
-  liveUrl: string;
+export interface ICertificate {
+  certBadgeIcon: string;
+  certName: string;
+  issuedBy: string;
+  issuedDate: string;
+  validUntilDate: string;
+  description: string[];
+  verificationLink: string;
 }
-export interface IProjects {
-  projects: IProject[];
+export interface ICertificates {
+  title: string;
+  details: ICertificate[];
 }
 
-export interface IProjectDetails {
-  projectDetail: IProject;
+export interface IEducation {
+  courseName: string;
+  institutionName: string;
+  startDate: string;
+  endDate: string;
+  grade: string;
+}
+export interface IEducationalPrograms {
+  title: string;
+  details: IEducation[];
+}
+
+export interface skills {
+  title: string;
+  skillsList: string[];
 }

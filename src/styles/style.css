@@ -11,7 +11,7 @@
 /* ========== tailwind custom styles ========== */
 @layer components {
   body {
-    @apply bg-light dark:bg-dark;
+    @apply bg-yellow-50 dark:bg-dark;
   }
   .container {
     @apply max-w-[1112px] mx-auto px-4;
@@ -38,4 +38,35 @@
   .footer-icons {
     @apply dark:text-light flex items-center border border-dark dark:border-light p-4 rounded-lg justify-center;
   }
+}
+
+/* Don't know how it works, but it works */
+
+/* Firefox */
+* {
+	scrollbar-color: transparent;
+}
+
+/* Webkit */
+/* Make scrollbars transparent except for main page scrollbar. */
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+body::-webkit-scrollbar,
+body::-webkit-scrollbar-track {
+	background: var(--theme-bg-gradient);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--theme-dim-light);
+	border: 4px solid transparent;
+	background-clip: content-box;
+	border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:root {
+		scroll-behavior: smooth;
+	}
 }
